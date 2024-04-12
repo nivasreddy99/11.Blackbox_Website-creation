@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Restaurant Online Booking</title>
+	<style>
+		body {
+			background-image: url('restaurant.jpg');
+			background-size: cover;
+			background-position: center;
+			font-family: Arial, sans-serif;
+		}
+		header {
+			background-color: rgba(0, 0, 0, 0.8);
+			color: white;
+			padding: 1rem;
+			text-align: center;
+		}
+		footer {
+			background-color: rgba(0, 0, 0, 0.8);
+			color: white;
+			padding: 1rem;
+			text-align: center;
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+		}
+		.container {
+			max-width: 600px;
+			margin: 5rem auto;
+			padding: 2rem;
+			background-color: rgba(255, 255, 255, 0.8);
+			text-align: center;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+		}
+		h1 {
+			margin-top: 0;
+		}
+		form {
+			margin-top: 2rem;
+		}
+		label {
+			display: block;
+			margin-bottom: 0.5rem;
+		}
+		input[type="text"], input[type="password"] {
+			width: 100%;
+			padding: 0.5rem;
+			margin-bottom: 1rem;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+		button {
+		background-color: rgba(0, 0, 0, 0.8);
+			color: white;
+			padding: 0.5rem 2rem;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: rgba(0, 0, 0, 1);
+		}
+		.error {
+			color: red;
+			margin-top: 0.5rem;
+			font-size: 0.8rem;
+		}
+	</style>
+	<script>
+		function validateForm() {
+			const username = document.forms["loginForm"]["username"].value;
+			const password = document.forms["loginForm"]["password"].value;
+			if (username == "" || password == "") {
+				alert("Username and password are required");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Welcome to Our Restaurant!</h1>
+	</header>
+	<div class="container">
+		<h1>Online Booking</h1>
+		<p>Please login to make a reservation or sign up for a new account.</p>
+		<form name="loginForm" onsubmit="return validateForm()">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username">
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password">
+			<button type="submit">Login</button>
+		</form>
+		<p class="error" id="error"></p>
+		<p>Don't have an account yet? <a href="#">Sign up now</a></p>
+	</div>
+	<footer>
+		<p>&copy; 2023 Our Restaurant</p>
+	</footer>
+</body>
+</html>~
